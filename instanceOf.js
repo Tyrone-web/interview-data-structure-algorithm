@@ -1,6 +1,6 @@
 // 自定义实现instanceOf方法
 
-const myInstanceOf = (a, b) => {
+const myInstanceof = (a, b) => {
     let p = a;
 
     while (p) {
