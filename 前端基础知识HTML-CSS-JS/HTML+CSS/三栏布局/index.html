@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 方式一 */
+      /* .container {
+        position: relative;
+        height: 300px;
+        border: 1px solid tomato;
+      }
+      .left {
+        position: absolute;
+        width: 200px;
+        height: 300px;
+        background: gray;
+      }
+      .right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 300px;
+        width: 300px;
+        background: green;
+      }
+      .center {
+        height: 300px;
+        margin-left: 200px;
+        margin-right: 300px;
+        background: red;
+      } */
+      /* 方式二 */
+      /* .container {
+        display: flex;
+        height: 300px;
+        border: 1px solid tomato;
+      }
+      .left {
+        width: 200px;
+        height: 300px;
+        background: gray;
+      }
+      .right {
+        height: 300px;
+        width: 300px;
+        background: green;
+      }
+      .center {
+        height: 300px;
+        flex: 1;
+        background: red;
+      } */
+      /* 方式三 */
+      /* .container {
+        height: 300px;
+        border: 1px solid tomato;
+      }
+      .left {
+        float: left;
+        width: 200px;
+        height: 300px;
+        background: gray;
+      }
+      .right {
+        float: right;
+        height: 300px;
+        width: 300px;
+        background: green;
+      }
+      .center {
+        height: 300px;
+        margin-left: 200px;
+        margin-right: 300px;
+        background: red;
+      } */
+      /* 方式四圣杯布局 */
+      /* .container {
+        height: 200px;
+        padding-left: 100px;
+        padding-right: 200px;
+      }
+      .center {
+        float: left;
+        height: 200px;
+        width: 100%;
+        background: red;
+      }
+      .left {
+        float: left;
+        position: relative;
+        height: 200px;
+        width: 100px;
+        margin-left: -100%;
+        left: -100px;
+        background: gray;
+      }
+      .right {
+        float: left;
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin-left: -200px;
+        left: 200px;
+        background: green;
+      } */
+      /* 方式五双飞翼布局 */
+      .container {
+        height: 200px;
+      }
+      .wrapper {
+        float: left;
+        height: inherit;
+        width: 100%;
+        background: red;
+      }
+      .center {
+        height: inherit;
+        margin-left: 100px;
+        margin-right: 200px;
+        background: red;
+      }
+      .left {
+        float: left;
+        height: inherit;
+        width: 100px;
+        margin-left: -100%;
+        background: gray;
+      }
+      .right {
+        float: left;
+        margin-left: -200px;
+        height: inherit;
+        width: 200px;
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div class="left">left</div>
+      <div class="center">center</div>
+      <div class="right">right</div> -->
+      <!-- 利用浮动实现三栏布局 -->
+      <!-- <div class="left">left</div>
+      <div class="right">right</div>
+      <div class="center">center</div> -->
+      <!-- 圣杯布局时center放在最前面 -->
+      <!-- <div class="center">center</div>
+      <div class="left">left</div>
+      <div class="right">right</div> -->
+      <!-- 双飞翼布局时center放在最前面且需要再center中再套一层div -->
+      <div class="wrapper">
+        <div class="center">center</div>
+      </div>
+      <div class="left">left</div>
+      <div class="right">right</div>
+    </div>
+  </body>
+</html>
