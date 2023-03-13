@@ -6,8 +6,8 @@ const pipe = (...funcs) => {
     }
 
     return params => {
-        // return funcs.reduce(callback, params);
-        return funcs.reduceRight(callback, params);
+        // return funcs.reduce(callback, params); // pipe
+        return funcs.reduceRight(callback, params); // compose
     }
 }
 
