@@ -7,7 +7,7 @@ const pipe = (...funcs) => {
 
     return params => {
         // return funcs.reduce(callback, params); // pipe
-        return funcs.reduceRight(callback, params); // compose
+        return funcs.reduceRight(callback, params); // compose：倒序的pipe
     }
 }
 
