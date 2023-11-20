@@ -2,9 +2,9 @@
 
 const isEqual = (obj1, obj2) => {
     // 传入的参数不是引用类型（值类型）
-    if (typeof obj1 !== 'object' && obj1 !== null) {
-        return obj1 === obj2;
-    }
+    if (typeof obj1 !== 'object' || typeof obj2 !== 'object' || obj1 === null || obj2 === null) {
+    return obj1 === obj2;
+  }
 
     // 传入的参数是同一个引用
     if (obj1 === obj2) {
