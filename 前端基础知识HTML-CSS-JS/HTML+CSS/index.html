@@ -21,10 +21,33 @@
       .border-box {
         box-sizing: border-box;
       }
+
+      .box1 {
+        display: flex;
+        border: 1px solid green;
+        width: 200px;
+        height: 200px;
+      }
+
+      .item {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: black;
+      }
+
+      .item:nth-of-type(2) {
+        align-self: center;
+      }
     </style>
   </head>
   <body>
     <div class="box content-box"></div>
     <div class="box border-box"></div>
+
+    <div class="box1">
+      <span class="item"></span>
+      <span class="item"></span>
+    </div>
   </body>
 </html>

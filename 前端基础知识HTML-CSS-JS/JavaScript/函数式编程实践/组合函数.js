@@ -23,7 +23,28 @@ function divide2(num) {
     return num / 2
 }
 
+const compose = (...funcs) => {
+    return function (param) {
+        return funcs.reduce((acc, func) => {
+            return func(acc);
+        }, param);
+    }
+}
+
+// 正则校验邮箱
+const reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+$/;
+const checkEmail = (email) => {
+    return reg.test(email);
+}
+
+// 校验手机号
+const checkPhone = (phone) => {
+    return /^1[34578]\d{9}$/.test(phone);
+}
+
+const res1 = checkEmail('123@qq.com');
+console.log(res1);;
 // 组合三个函数
-const compute = pipe(add4, mutiply3, divide2);
+const compute = compose(add4, mutiply3, divide2);
 // const compute = pipe(divide2, mutiply3, add4);
-console.log(compute(10));
+// console.log(compute(10));

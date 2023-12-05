@@ -49,3 +49,43 @@ const copyInstanceof = (l, r) => {
 // console.log(myInstanceof(c, Object));
 // console.log(myInstanceof(d, Function));
 console.log(copyInstanceof(2, Number));
+
+
+const assert = require('assert');
+
+describe('myInstanceof', () => {
+    it('should return true if l is an instance of r', () => {
+        const obj = {
+            foo: 'bar',
+        };
+        const MyClass = function () {
+            this.name = 'John';
+        };
+        MyClass.prototype.sayName = function () {
+            console.log(this.name);
+        };
+        const myInstanceofInstance = new MyClass();
+
+        assert.strictEqual(myInstanceof(myInstanceofInstance, MyClass), true);
+    });
+
+    it('should return false if l is not an instance of r', () => {
+        const obj = {
+            foo: 'bar',
+        };
+        const MyClass = function () {
+            this.name = 'John';
+        };
+        MyClass.prototype.sayName = function () {
+            console.log(this.name);
+        };
+
+        assert.strictEqual(myInstanceof(obj, MyClass), false);
+    });
+
+    it('should return false if l is a primitive value', () => {
+        assert.strictEqual(myInstanceof(123, String), false);
+        assert.strictEqual(myInstanceof(true, Number), false);
+        assert.strictEqual(myInstanceof('foo', Boolean), false);
+    });
+});
