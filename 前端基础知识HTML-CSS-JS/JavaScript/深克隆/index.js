@@ -4,13 +4,15 @@ const cloneDeep = obj => {
         return obj;
     }
 
-    let result = null;
-
-    if (obj instanceof Array) {
-        result = [];
-    } else {
-        result = {};
+    if (obj instanceof Date) {
+        return new Date(obj);
     }
+
+    if (obj instanceof RegExp) {
+        return new RegExp(obj);
+    }
+
+    let result = obj instanceof Array ? [] : {};
 
     for (let key in obj) {
         // 不克隆原型链上的属性
